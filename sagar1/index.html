@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/160334937f.js" crossorigin="anonymous"></script>
+    <title>Saraan Remedies</title>
+    <link rel="icon" type="image/x-icon" href="/images/logo.JPG">
+    <script>
+        function openNav() {
+            document.getElementById("navLinks").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("navLinks").style.width = "0";
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="top">
+            <div class="logo">
+                <img src="./images/logo.JPG" alt="LOGO">
+            </div>
+            <nav class="navbar" id="navLinks">
+                <span class="closebtn" onclick="closeNav()">&times;</span>
+                <a href="#">HOME</a>
+                <a href="#Products">PRODUCTS</a>
+                <a href="#Contact">QUERY</a>
+                <a href="#Contact">CONTACT</a>
+            </nav>
+            <span class="burger" onclick="openNav()">&#9776;</span>
+        </div>
+        <div class="main">
+            <h2>SARAAN REMEDIES</h2>
+            <h6>Where all your <u> Healthcare </u> needs are fullfilled.</h6>
+            <button type="button"><span></span><a href="#Form-Box">Raise Query</a></button>
+        </div>
+    </header>
+    <!-- ----------------------------products------------------------------- -->
+
+
+    <section class="products" id="Products">
+        <h1>Our Products</h1>
+        <div class="prod-row">
+            <div class="prod-col">
+                <p>Our standart product <span>Ginkometh-OD</span>, <br>
+                    contains Ginkgo Biloba 40mg,
+                    Methylcobalamin 1500mcg, Alpha Lipoic Acid 200 Mg, Benfotiamine 150mg,
+                    Inositol100mg, Chromium Picolinate 200mcg, Pyridoxine Hydrochloride 3mg,
+                    Folic Acid 1.5mg, Vitamin D3 1000iu, Calcium Carbonate 500mg.
+                </p>
+            </div>
+            <div class="slideshow-container prod-col">
+                <div class="mySlides fade">
+                    <img src="/images/prod1.jpg">
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="/images/prod2.jpg">
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="/images/saraanProduct.JPG">
+                </div>
+                <!-- The dots/circles -->
+                <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ---------------------------form--------------------------- -->
+
+
+
+
+    <section class="form" id="Contact">
+        <h1>Connect With Us</h1>
+        <div class="prod-row">
+            <div class="prod-col">
+                <p><span>SARAAN REMEDIES</span><br>
+                    A-1108 EMERALD HEIGHTS <br> SECTOR-88 FARIDABAD <br> Faridabad, Haryana (121002) <br>
+                    Mobile:- (+91)- 8860491960 <br>
+                    Mail Us:- saraan.remedies@gmail.com
+                </p>
+            </div>
+            <div class="prod-col">
+                <div class="form-box" id="Form-Box">
+                    <h1>Raise Your Query</h1>
+                    <form action="/action_page.php">
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="fname">First Name</label>
+                            </div>
+                            <div class="col-75">
+                                <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="lname">Last Name</label>
+                            </div>
+                            <div class="col-75">
+                                <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="Mnumber">Mobile Number</label>
+                            </div>
+                            <div class="col-75">
+                                <input type="text" id="Mnumber" name="Mnumber" placeholder="Your Mobile Number..">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="subject">Subject</label>
+                            </div>
+                            <div class="col-75">
+                                <textarea id="subject" name="subject" placeholder="Write something.."
+                                    style="height:200px"></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <input type="submit" value="Submit">
+                        </div>
+                    </form>
+                    <br>
+
+                </div>
+            </div>
+
+        </div>
+        <h6>
+            <p> Made with 💓 & Passion---> k.rakeshpandey@hotmail.com </p>
+        </h6>
+
+    </section>
+
+    <!-- ------------------------javasript---------------- -->
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+    </script>
+</body>
+
+</html>

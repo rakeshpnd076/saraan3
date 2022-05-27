@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Saraan Remedies</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"
+    rel="stylesheet">
+  <script src="https://kit.fontawesome.com/160334937f.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="container" id="container">
+    <nav>
+      <img src="images/logo.JPG" alt="LOGO">
+      <div class="nav-links" id="navLinks">
+        <i class="fa fa-times" onclick="hideMenu()"></i>
+        <ul>
+          <li><a href="#HOME">HOME</a></li>
+          <li><a href="#Products">PRODUCT</a></li>
+          <li><a href="#Form-Box">ASK US</a></li>
+          <li><a href="#Form-Box">CONTACT</a></li>
+        </ul>
+      </div>
+      <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+    <div class="content">
+      <h2>SARAAN REMEDIES</h2>
+      <h6> Where all your <u>Healthcare</u> needs are fullfilled.</h6>
+      <div>
+        <button type="button"><span></span><a href="#Form-Box">Raise Query</a></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ----------------------------products------------------------------- -->
+
+
+  <section class="products" id="Products">
+    <h1>Our Products</h1>
+    <div class="horizontal">
+      <div class="prod">
+        <p>Our standart product <span>Ginkometh-OD</span>,
+        contains Ginkgo Biloba 40mg,
+        Methylcobalamin 1500mcg, Alpha Lipoic Acid 200 Mg, Benfotiamine 150mg,
+        Inositol100mg, Chromium Picolinate 200mcg, Pyridoxine Hydrochloride 3mg,
+        Folic Acid 1.5mg, Vitamin D3 1000iu, Calcium Carbonate 500mg.
+        </p>
+      </div>
+      <div class="slideshow-container prod">
+
+        <div class="mySlides fade">
+          <img src="./images/saraanProduct.JPG">
+        </div>
+
+        <div class="mySlides fade">
+          <img src="./images/prod1.jpg">
+        </div>
+
+        <div class="mySlides fade">
+          <img src="./images/prod2.jpg">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ---------------------------form--------------------------- -->
+
+
+  <div class="form-box" id="Form-Box">
+    <h1>Raise Your Query</h1>
+    <form action="/action_page.php">
+      <div class="row">
+        <div class="col-25">
+          <label for="fname">First Name</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="fname" name="firstname" placeholder="Your name..">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="lname">Last Name</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="Mnumber">Mobile Number</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="Mnumber" name="Mnumber" placeholder="Your Mobile Number..">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="subject">Subject</label>
+        </div>
+        <div class="col-75">
+          <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <input type="submit" value="Submit">
+      </div>
+    </form>
+    <br>
+    <h6>
+      <p> Made with 💓 & Passion---> k.rakeshpandey@hotmail.com </p>
+    </h6>
+  </div>
+
+  <!-------------------- some javascript  ------------------------>
+  <script>
+    var navLinks = document.getElementById("navLinks");
+    function showMenu() {
+      navLinks.style.width = "200px";
+    }
+    function hideMenu() {
+      navLinks.style.width = "0%";
+    }
+
+
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {
+        slideIndex = 1
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+      setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+  </script>
+
+</body>
+
+</html>
